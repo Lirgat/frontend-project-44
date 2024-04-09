@@ -1,6 +1,5 @@
 import readlineSync from "readline-sync";
-import { name } from '../src/cli.js'
-import { greetings } from '../src/cli.js';
+import { name, greetings } from '../src/cli.js'
 
 console.log(greetings());
 
@@ -13,14 +12,11 @@ function getRandomNumber(min, max) {
     return Math.random() * (max - min) + min
   }
 
-let evenQuestion = () => {
+const evenQuestion = () => {
     let randomNum = Math.floor(getRandomNumber(1, 100))
     console.log(`Question: ${randomNum}`);
     let yourAnswer = readlineSync.question(`Your Answer: `)
-    if(randomNum % 2 === 0 && yourAnswer === "yes"){
-        console.log('Correct!')
-        return true
-    } else if(randomNum % 2 !== 0 && yourAnswer === 'no'){
+    if((randomNum % 2 === 0 && yourAnswer === "yes") || (randomNum % 2 !== 0 && yourAnswer === 'no')){
         console.log('Correct!')
         return true
     } else {
