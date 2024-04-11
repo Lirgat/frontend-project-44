@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {
   name, // Без передачи аргуемнтов
   greetings, // Без передачи аргументов
