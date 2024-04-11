@@ -45,7 +45,7 @@ function prime() {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
       );
-      console.log(`Let's try again, ${UserName}`);
+      console.log(`Let's try again, ${UserName}!`);
       return false;
     }
   }
