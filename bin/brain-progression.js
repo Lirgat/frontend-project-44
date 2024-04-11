@@ -25,11 +25,13 @@ function progression() {
     const RANDOM_PLUS = Math.floor(getRandomNumber(1, 10));
     const RANDOM_INDEX = Math.floor(getRandomNumber(0, 9));
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i += 1) {
       arr.push((randomStart += RANDOM_PLUS));
     }
 
-    const DOTTING_ARR = (arr[RANDOM_INDEX] = '..');
+    const dottingArr = '..';
+    arr[RANDOM_INDEX] = dottingArr;
+
     const ARR_STRING = arr.join(' ');
     const GET_DOT_INDEX = arr.indexOf('..');
 

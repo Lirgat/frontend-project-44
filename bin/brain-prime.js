@@ -26,7 +26,7 @@ function prime() {
       correctAnswer = 'no';
     }
 
-    for (let i = 2; i <= Math.sqrt(GET_PRIME); i++) {
+    for (let i = 2; i <= Math.sqrt(GET_PRIME); i += 1) {
       if (GET_PRIME % i === 0) {
         correctAnswer = 'no';
         break;
