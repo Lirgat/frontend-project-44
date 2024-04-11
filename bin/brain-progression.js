@@ -2,13 +2,13 @@
 import {
   name, // Без передачи аргуемнтов
   greetings, // Без передачи аргументов
-} from "../src/cli.js";
+} from '../src/cli.js';
 import {
-  getRandomNumber, //Первым аргументов выступает - мин. число, вторым - макс.
-  question, //В аргумент передаётся переменная или шабл. строка с заданием
+  getRandomNumber, // Первым аргументов выступает - мин. число, вторым - макс.
+  question, // В аргумент передаётся переменная или шабл. строка с заданием
   yourAnswerFunc, // Без передачи аргументов
-  times, //В первом аргументе указываем имя функции без круглых скобок, второй - UserName
-} from "../src/index.js";
+  times, // В первом аргументе указываем имя функции без круглых скобок, второй - UserName
+} from '../src/index.js';
 
 function progression() {
   greetings();
@@ -16,10 +16,10 @@ function progression() {
   const UserName = name();
 
   console.log(`Hello, ${UserName}!`);
-  console.log("What number is missing in the progression?");
+  console.log('What number is missing in the progression?');
 
   function arrProgression() {
-    let arr = [];
+    const arr = [];
     let randomStart = Math.floor(getRandomNumber(1, 10));
 
     const RANDOM_PLUS = Math.floor(getRandomNumber(1, 10));
@@ -29,9 +29,9 @@ function progression() {
       arr.push((randomStart += RANDOM_PLUS));
     }
 
-    const DOTTING_ARR = (arr[RANDOM_INDEX] = "..");
-    const ARR_STRING = arr.join(" ");
-    const GET_DOT_INDEX = arr.indexOf("..");
+    const DOTTING_ARR = (arr[RANDOM_INDEX] = '..');
+    const ARR_STRING = arr.join(' ');
+    const GET_DOT_INDEX = arr.indexOf('..');
 
     let currentValue;
 
@@ -50,18 +50,17 @@ function progression() {
     }
 
     question(ARR_STRING);
-    let userAnswer = yourAnswerFunc();
+    const userAnswer = yourAnswerFunc();
 
     if (correctAnswer === +userAnswer) {
-      console.log("Correct!");
+      console.log('Correct!');
       return true;
-    } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-      );
-      console.log(`Let's try again, ${UserName}!`);
-      return false;
     }
+    console.log(
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
+    );
+    console.log(`Let's try again, ${UserName}!`);
+    return false;
   }
 
   times(arrProgression, UserName);
