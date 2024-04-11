@@ -20,7 +20,7 @@ function prime() {
 
   function isPrime() {
     const GET_PRIME = Math.floor(getRandomNumber(1, 100));
-    let correctAnswer;
+    let correctAnswer = "yes";
 
     if (GET_PRIME <= 1) {
       correctAnswer = "no";
@@ -29,8 +29,7 @@ function prime() {
     for (let i = 2; i <= Math.sqrt(GET_PRIME); i++) {
       if (GET_PRIME % i === 0) {
         correctAnswer = "no";
-      } else {
-        correctAnswer = "yes";
+        break;
       }
     }
 
